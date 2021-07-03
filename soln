@@ -1,0 +1,62 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def minimumBribes(q):
+    co = 0
+    d = dict(enumerate(q,1))
+    for i in range(len(d),1,-1):
+        if d[i]==i:
+            continue
+        if d[i-1]==i:
+            d[i-1] = d[i]
+            co+=1
+        elif d[i-2]==i:
+            d[i-2],d[i-1] = d[i-1],d[i]
+            co+=2
+        else:
+            return "Too chaotic"
+    return co
+
+for _ in range(int(input())):
+    n = int(input())
+    q = list(map(int, input().split()))
+    print(minimumBribes(q))
+
+IN C++ *******************************************************
+
+void minimumBribes(vector<int> A) 
+{
+    int n = A.size();
+    int cnt = 0;
+    for(int i = n - 1; i >= 0; i--)
+    {
+        if(A[i] != (i + 1))
+        {
+            if(((i - 1) >= 0) && A[i - 1] == (i + 1))
+            {
+                cnt++;
+                swap(A[i], A[i-1]);
+            }
+            else if(((i - 2) >= 0) && A[i - 2] == (i + 1))
+            {
+                cnt += 2;
+                A[i - 2] = A[i - 1];
+                A[i - 1] = A[i];
+                A[i] = i + 1;
+            }
+            else
+            {
+                printf("Too chaotic\n");
+                return;
+            }
+        }      
+    }
+    printf("%d\n",cnt);
+    return;
+}
