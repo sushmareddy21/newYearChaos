@@ -41,3 +41,5 @@ public class MinSwapArray {
 		System.out.println("swap count :" + countSwap);
 	}
 }
+
+for reference:https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/
