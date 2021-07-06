@@ -49,3 +49,59 @@ class Solution {
     
     
 }
+
+
+or we can write line no:29 after line no:43 as shown in below by writing the various conditions to pass tha all tcses
+
+class Solution {
+    public int shipWithinDays(int[] weights, int days) {
+        int sum = 0;
+        
+        int s;
+        for (int i = 0; i < weights.length; i++)
+            sum += weights[i];
+        
+        s = 0;
+        int end =(int)sum;
+            //Arrays.stream(weights).sum();
+        int res = Integer.MAX_VALUE;
+        while(s <= end){
+            int mid = s + (end - s)/2 ;
+            if(isValid(weights,days,mid)){
+                res = mid;
+                end = mid-1;
+            }
+            else{
+                s = mid+1;  
+            }
+        }
+        return res;
+    }
+    public boolean isValid(int weights[], int days,int mx){
+        int day = 1;
+        int sum = 0;
+        for(int i=0; i<weights.length; i++){
+           
+           /*if (weights[i] > mx || day > days) return false;
+           this line plays a imp role inorder to pass other remaining tcases
+           */
+            sum+=weights[i];
+            
+            if(sum > mx){
+                day++;
+                sum=weights[i];
+            }
+            
+            if(day > days){
+                return false;
+            }
+             if (weights[i] > mx) return false;
+            
+             // if (day == weights.length)
+             //    return i - 1;
+        }
+        return true;
+    }
+    
+    
+}
