@@ -8,3 +8,6 @@ for reference:**https://allhackerranksolutions.blogspot.com/2019/01/new-year-cha
 MINIIMUM NO. OF SORTS:
 FOR REFERENCE:***https://programs.programmingoneonone.com/2021/03/hackerrank-minimum-swaps-2-solution.html*****
 *****************https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/***********************
+
+Allocate min no. of pages:https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/discuss/256729/JavaC++Python-Binary-Search
+                          https://www.youtube.com/watch?v=2JSQIhPcHQg&list=TLPQMDQwNzIwMjHuc5xBxd1ciw&index=5
